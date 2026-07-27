@@ -31,7 +31,60 @@
  * @param <Add InputName> <add description here>
  *
  * @return <Add Return Informaiton here>
- */
+*/
 
+/*
+ * @brief Print the statistics of a given array
+ * @param array
+ * @return void
+ * */
+void print_statistics(char *array);
+
+/*
+ * @brief Print the given array
+ * @param array
+ * @return void
+ * */
+void print_array(char *array, int len);
+
+/*
+ * @brief Find the median of the array
+ * @param array
+ * @param length of array
+ * @return the median
+ * */
+char find_median(char *array, int len);
+
+/*
+ * @brief Find the mean of the array
+ * @param array
+ * @param length of array
+ * @return the median
+ * */
+char find_mean(char *array, int len);
+
+/*
+ * @brief Find the max of the array
+ * @param array
+ * @param length of array
+ * @return the median
+ * */
+char find_maximum(char *array, int len);
+
+/*
+ * @brief Find the min of the array
+ * @param array
+ * @param length of array
+ * @return the median
+ * */
+char find_minimum(char *array, int len);
+
+/*
+ * @brief Sort the array
+ * @param array
+ * @param length of array
+ * @return the median
+ * */
+char sort_array(char *array, int len);
 
 #endif /* __STATS_H__ */
