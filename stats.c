@@ -13,7 +13,6 @@
  * @brief Analysis of the char dataset
  * @author Anirudh Singh
  * @date 27 July 2026
- *
  */
 
 
@@ -34,34 +33,68 @@ void main() {
 
   /* Other Variable Declarations Go Here */
   /* Statistics and Printing Functions Go Here */
-
+  sort_array(test, SIZE);
+  print_array(test, SIZE);
+  print_statistics(test, SIZE);
 }
 
 /* Add other Implementation File Code Here */
-void print_statistics(char *array) {
-
+void print_statistics(unsigned char *array, int len) {
+  unsigned char max_num = find_maximum(array, len);
+  unsigned char min_num = find_minimum(array, len);
+  unsigned char median = find_median(array, len);
+  unsigned char mean = find_mean(array, len);
+  printf("Max: %u\n", max_num);
+  printf("Min: %u\n", min_num);
+  printf("Median: %u\n", median);
+  printf("Mean: %u\n", mean);
 }
 
-void print_array(char *array) {
-
+void print_array(unsigned char *array, int len) {
+  printf("{ ");
+  for (int i = 0; i < len - 1; i++) {
+    printf("%u, ", array[i]);
+  }
+  printf("%u }\n", array[len - 1]);
 }
 
-char find_median(char *array, int len) {
-
+unsigned char find_median(unsigned char *array, int len) {
+  unsigned char median;
+  if ((len % 2) == 0) {
+    median = (array[(len / 2) - 1] + array[(len / 2)]) / 2;
+    return median;
+  }
+  median = array[len / 2];
+  return median;
 }
 
-char find_mean(char *array, int len) {
-
+unsigned char find_mean(unsigned char *array, int len) {
+  int sum = 0;
+  for (int i = 0; i < len; i++) {
+    sum += (int) array[i];
+  }
+  return (unsigned char)(sum / len);
 }
 
-char find_maximum(char *array, int len) {
-
+/* Finding the maximum after sorting the array */
+unsigned char find_maximum(unsigned char *array, int len) {
+  return array[0];
 }
 
-char find_minimum(char *array, int len) {
-
+unsigned char find_minimum(unsigned char *array, int len) {
+  return array[len - 1];
 }
 
-char sort_array(char *array, int len) {
-
+void sort_array(unsigned char *array, int len) {
+  for (int i = 0; i <= (len - 2); i++) {
+    int max_idx = i;
+    for (int j = i + 1; j <= (len - 1); j++) {
+      if (array[j] > array[max_idx]) {
+        max_idx = j; 
+      }
+    }
+    unsigned char temp = array[max_idx];
+    array[max_idx] = array[i];
+    array[i] = temp;
+  }
 }
