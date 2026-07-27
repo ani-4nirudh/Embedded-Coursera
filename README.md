@@ -1,5 +1,5 @@
 # Introduction
-This repo contains code for the assignments in the online (embedded systems course)[https://www.coursera.org/learn/introduction-embedded-systems/].
+This repo contains code for the assignments in the online [embedded systems course](https://www.coursera.org/learn/introduction-embedded-systems/).
 
 # To-Do
 1. Report analysis on maximum, minimum, mean and median
