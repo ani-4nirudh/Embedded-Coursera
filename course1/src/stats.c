@@ -23,7 +23,7 @@
 /* Size of the Data Set */
 #define SIZE (40)
 
-void main() {
+int main(void) {
 
   unsigned char test[SIZE] = { 34, 201, 190, 154,   8, 194,   2,   6,
                               114, 88,   45,  76, 123,  87,  25,  23,
@@ -36,6 +36,8 @@ void main() {
   sort_array(test, SIZE);
   print_array(test, SIZE);
   print_statistics(test, SIZE);
+
+  return 0;
 }
 
 /* Add other Implementation File Code Here */
@@ -44,18 +46,18 @@ void print_statistics(unsigned char *array, int len) {
   unsigned char min_num = find_minimum(array, len);
   unsigned char median = find_median(array, len);
   unsigned char mean = find_mean(array, len);
-  printf("Max: %u\n", max_num);
-  printf("Min: %u\n", min_num);
-  printf("Median: %u\n", median);
-  printf("Mean: %u\n", mean);
+  PRINTF("Max: %u\n", max_num);
+  PRINTF("Min: %u\n", min_num);
+  PRINTF("Median: %u\n", median);
+  PRINTF("Mean: %u\n", mean);
 }
 
 void print_array(unsigned char *array, int len) {
-  printf("{ ");
+  PRINTF("{ ");
   for (int i = 0; i < len - 1; i++) {
-    printf("%u, ", array[i]);
+    PRINTF("%u, ", array[i]);
   }
-  printf("%u }\n", array[len - 1]);
+  PRINTF("%u }\n", array[len - 1]);
 }
 
 unsigned char find_median(unsigned char *array, int len) {
@@ -73,10 +75,9 @@ unsigned char find_mean(unsigned char *array, int len) {
   for (int i = 0; i < len; i++) {
     sum += (int) array[i];
   }
-  return (unsigned char)(sum / len);
+  return (unsigned char)((sum + (len / 2)) / len);
 }
 
-/* Finding the maximum after sorting the array */
 unsigned char find_maximum(unsigned char *array, int len) {
   return array[0];
 }

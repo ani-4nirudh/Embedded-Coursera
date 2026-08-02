@@ -18,73 +18,60 @@
 #ifndef __STATS_H__
 #define __STATS_H__
 
-/* Add Your Declarations and Function Comments here */ 
-
 /**
- * @brief <Add Brief Description of Function Here>
- *
- * <Add Extended Description Here>
- *
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- *
- * @return <Add Return Informaiton here>
-*/
-
-/*
  * @brief Print the statistics of a given array
- * @param array
+ * @param array The array of unsigned characters
+ * @param len The length of the given array
  * @return void
- * */
+ */
 void print_statistics(unsigned char *array, int len);
 
-/*
+/**
  * @brief Print the given array
- * @param array
+ * @param array The array of unsigned characters
+ * @param len The length of the given array
  * @return void
- * */
+ */
 void print_array(unsigned char *array, int len);
 
-/*
+/**
  * @brief Find the median of the array
- * @param array
- * @param length of array
+ * @param array The array of unsigned characters
+ * @param len The length of the given array
  * @return the median
- * */
+ */
 unsigned char find_median(unsigned char *array, int len);
 
-/*
+/**
  * @brief Find the mean of the array
- * @param array
- * @param length of array
- * @return the median
- * */
+ * @param array The array of unsigned characters
+ * @param len The length of the given array
+ * @return the mean
+ */
 unsigned char find_mean(unsigned char *array, int len);
 
-/*
+/**
  * @brief Find the max of the array
- * @param array
- * @param length of array
- * @return the median
- * */
+ * @param array The array of unsigned characters
+ * @param len The length of the given array
+ * @return the maximum
+ */
 unsigned char find_maximum(unsigned char *array, int len);
 
-/*
+/**
  * @brief Find the min of the array
- * @param array
- * @param length of array
- * @return the median
- * */
+ * @param array The array of unsigned characters
+ * @param len The length of the given array
+ * @return the minimum
+ */
 unsigned char find_minimum(unsigned char *array, int len);
 
-/*
- * @brief Sort the array
- * @param array
- * @param length of array
- * @return the median
- * */
+/**
+ * @brief Sort the array using selection sort
+ * @param array The array of unsigned characters
+ * @param len The length of the given array
+ * @return the sorted array in descending order
+ */
 void sort_array(unsigned char *array, int len);
 
 #endif /* __STATS_H__ */
