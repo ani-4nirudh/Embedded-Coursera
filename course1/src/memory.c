@@ -48,7 +48,7 @@ void clear_all(char * ptr, unsigned int size){
   set_all(ptr, 0, size);
 }
 
-uint8_t *my_memmove(uint8_t *src, uint8_t *dst, size_t length) {
+uint8_t * my_memmove(uint8_t *src, uint8_t *dst, size_t length) {
   
   // Check if destination pointer is less than source
   if (dst < src) {
@@ -64,7 +64,7 @@ uint8_t *my_memmove(uint8_t *src, uint8_t *dst, size_t length) {
   return dst;
 }
 
-uint8_t *my_memcopy(uint8_t *src, uint8_t *dst, size_t length) {
+uint8_t * my_memcopy(uint8_t *src, uint8_t *dst, size_t length) {
   for (size_t i = 0; i < length; i++) {
     *(dst + i) = *(src + i);
   }
@@ -72,7 +72,7 @@ uint8_t *my_memcopy(uint8_t *src, uint8_t *dst, size_t length) {
   return dst;
 }
 
-uint8_t *my_memset(uint8_t *src, size_t length, uint8_t value) {
+uint8_t * my_memset(uint8_t *src, size_t length, uint8_t value) {
   for (size_t i = 0; i < length; i++) {
     *(src + i) = value;                 // Set the value
   }
@@ -80,7 +80,7 @@ uint8_t *my_memset(uint8_t *src, size_t length, uint8_t value) {
   return src;
 }
 
-uint8_t *my_memzero(uint8_t *src, size_t length) {
+uint8_t * my_memzero(uint8_t *src, size_t length) {
   for (size_t i = 0; i < length; i++) {
     *(src + i) = 0;                     // Set to 0
   }
@@ -88,7 +88,7 @@ uint8_t *my_memzero(uint8_t *src, size_t length) {
   return src;
 }
 
-uint8_t *my_reverse(uint8_t *src, size_t length) {
+uint8_t * my_reverse(uint8_t *src, size_t length) {
   uint8_t temp = 0;                     // Initialise a temp variable
   for (size_t i = 0; i < (length / 2); i++) {
       temp = *(src + (length - 1 - i));
@@ -97,4 +97,18 @@ uint8_t *my_reverse(uint8_t *src, size_t length) {
   }
   
   return src;
+}
+
+int32_t * reserve_words(size_t length) {
+  int32_t *ptr = (int32_t *)malloc(sizeof(int32_t) * length);
+  
+  if (ptr == NULL) {
+    return NULL;
+  }
+
+  return ptr;
+}
+
+void * free_words(int32_t *src) {
+  free(src);
 }

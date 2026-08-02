@@ -99,7 +99,7 @@ void clear_all(char * ptr, unsigned int size);
  *
  * @return Pointer to the destination
  */
-uint8_t *my_memmove(uint8_t *src, uint8_t *dst, size_t length);
+uint8_t * my_memmove(uint8_t *src, uint8_t *dst, size_t length);
 
 /**
  * @brief Copy the data to the destinaton
@@ -110,7 +110,7 @@ uint8_t *my_memmove(uint8_t *src, uint8_t *dst, size_t length);
  *
  * @return Pointer to the destination
  */
-uint8_t *my_memcopy(uint8_t *src, uint8_t *dst, size_t length);
+uint8_t * my_memcopy(uint8_t *src, uint8_t *dst, size_t length);
 
 /**
  * @brief Set the memory of the given location to a given value
@@ -121,7 +121,7 @@ uint8_t *my_memcopy(uint8_t *src, uint8_t *dst, size_t length);
  *
  * @return Pointer to the source
  */
-uint8_t *my_memset(uint8_t *src, size_t length, uint8_t value);
+uint8_t * my_memset(uint8_t *src, size_t length, uint8_t value);
 
 /**
  * @brief Zero the memory of the given location
@@ -131,7 +131,7 @@ uint8_t *my_memset(uint8_t *src, size_t length, uint8_t value);
  *
  * @return Pointer to the source
  */
-uint8_t *my_memzero(uint8_t *src, size_t length);
+uint8_t * my_memzero(uint8_t *src, size_t length);
 
 /**
  * @brief Reverse the order of all the bytes
@@ -141,7 +141,7 @@ uint8_t *my_memzero(uint8_t *src, size_t length);
  *
  * @return Pointer to the source
  */
-uint8_t *my_reverse(uint8_t *src, size_t length);
+uint8_t * my_reverse(uint8_t *src, size_t length);
 
 /**
  * @brief Number of words to dynamically allocate in heap
@@ -150,7 +150,7 @@ uint8_t *my_reverse(uint8_t *src, size_t length);
  *
  * @return NULL pointer or pointer to memory if successful
  */
-int32_t *reserve_words(size_t length);
+int32_t * reserve_words(size_t length);
 
 /**
  * @brief Free the dynamically allocated memory
@@ -159,6 +159,6 @@ int32_t *reserve_words(size_t length);
  *
  * @return void
  */
-void *free_words(int32_t *src);
+void * free_words(int32_t *src);
 
 #endif /* __MEMORY_H__ */
