@@ -20,6 +20,10 @@
  * @date April 1 2017
  *
  */
+
+#include <stdlib.h>
+#include <stdint.h>
+#include <stddef.h>
 #include "memory.h"
 
 /***********************************************************
@@ -53,13 +57,15 @@ uint8_t * my_memmove(uint8_t *src, uint8_t *dst, size_t length) {
   // Check if destination pointer is less than source
   if (dst < src) {
     for (size_t i = 0; i < length; i++) {
-      *(dst + i) = *(src + i);          // Apply copy-forward
+      *(dst + i) = *(src + i);                    // Apply copy-forward
     }
-  } else if (dst >= src) {
-    for (size_t i = (length - 1); i >= 0; i--) {
-      *(dst + i) = *(src + i);          // Apply copy-backward
+  } else if (dst > src) {
+    for (size_t i = length; i > 0; i--) {         // Prevent overflow using (i - 1)
+      *(dst + (i - 1)) = *(src + (i - 1));        // Apply copy-backward
     }
   }
+
+  // Do not do anything if dst == src
 
   return dst;
 }
@@ -74,7 +80,7 @@ uint8_t * my_memcopy(uint8_t *src, uint8_t *dst, size_t length) {
 
 uint8_t * my_memset(uint8_t *src, size_t length, uint8_t value) {
   for (size_t i = 0; i < length; i++) {
-    *(src + i) = value;                 // Set the value
+    *(src + i) = value;                           // Set the value
   }
 
   return src;
@@ -82,14 +88,14 @@ uint8_t * my_memset(uint8_t *src, size_t length, uint8_t value) {
 
 uint8_t * my_memzero(uint8_t *src, size_t length) {
   for (size_t i = 0; i < length; i++) {
-    *(src + i) = 0;                     // Set to 0
+    *(src + i) = 0;                               // Set to 0
   }
 
   return src;
 }
 
 uint8_t * my_reverse(uint8_t *src, size_t length) {
-  uint8_t temp = 0;                     // Initialise a temp variable
+  uint8_t temp = 0;                               // Initialise a temp variable
   for (size_t i = 0; i < (length / 2); i++) {
       temp = *(src + (length - 1 - i));
       *(src + (length - 1 - i)) = *(src + i);
@@ -109,6 +115,6 @@ int32_t * reserve_words(size_t length) {
   return ptr;
 }
 
-void * free_words(int32_t *src) {
+void free_words(int32_t *src) {
   free(src);
 }
