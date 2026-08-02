@@ -1,6 +1,6 @@
-./course1/src/*.out
-./course1/src/*.map
-./course1/src/*.asm
-./course1/src/*.o
-./course1/src/*.d
-./course1/src/*.i
+course1/src/*.out
+course1/src/*.map
+course1/src/*.asm
+course1/src/*.o
+course1/src/*.d
+course1/src/*.i
