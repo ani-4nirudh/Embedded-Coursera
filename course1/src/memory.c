@@ -64,7 +64,7 @@ uint8_t *my_memmove(uint8_t *src, uint8_t *dst, size_t length) {
   return dst;
 }
 
-uint8_t my_memcopy(uint8_t *src, uint8_t *dst, size_t length) {
+uint8_t *my_memcopy(uint8_t *src, uint8_t *dst, size_t length) {
   for (size_t i = 0; i < length; i++) {
     *(dst + i) = *(src + i);
   }
@@ -72,7 +72,7 @@ uint8_t my_memcopy(uint8_t *src, uint8_t *dst, size_t length) {
   return dst;
 }
 
-uint8_t my_memset(uint8_t *src, size_t length, uint8_t value) {
+uint8_t *my_memset(uint8_t *src, size_t length, uint8_t value) {
   for (size_t i = 0; i < length; i++) {
     *(src + i) = value;                 // Set the value
   }
@@ -80,7 +80,7 @@ uint8_t my_memset(uint8_t *src, size_t length, uint8_t value) {
   return src;
 }
 
-uint8_t my_memzero(uint8_t *src, size_t length) {
+uint8_t *my_memzero(uint8_t *src, size_t length) {
   for (size_t i = 0; i < length; i++) {
     *(src + i) = 0;                     // Set to 0
   }
@@ -88,4 +88,13 @@ uint8_t my_memzero(uint8_t *src, size_t length) {
   return src;
 }
 
-
+uint8_t *my_reverse(uint8_t *src, size_t length) {
+  uint8_t temp = 0;                     // Initialise a temp variable
+  for (size_t i = 0; i < (length / 2); i++) {
+      temp = *(src + (length - 1 - i));
+      *(src + (length - 1 - i)) = *(src + i);
+      *(src + i) = temp;
+  }
+  
+  return src;
+}
