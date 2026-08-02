@@ -56,6 +56,11 @@ ifeq ($(PLATFORM), HOST)
 	LDFLAGS = -Wl,-Map=$(TARGET).map
 endif
 
+# Adding verbose option
+ifeq ($(VERBOSE),1)
+	CPPFLAGS += -DVERBOSE
+endif
+
 CFLAGS = -Wall -Werror -g -O0 -std=c99 $(CPU) $(ARCH_FLAGS)
 
 # Defining variables to generate files

@@ -15,7 +15,7 @@ ifeq ($(PLATFORM),MSP432)
 						./src/memory.c \
 						./src/interrupts_msp432p401r_gcc.c \
 						./src/startup_msp432p401r_gcc.c \
-						./src/system_msp432p401r.c
+						./src/system_msp432p401r.c \
 
 	INCLUDES = -I ./include/common \
 						 -I ./include/CMSIS \
@@ -23,7 +23,7 @@ ifeq ($(PLATFORM),MSP432)
 
 else ifeq ($(PLATFORM),HOST)
 	SOURCES = ./src/main.c \
-						./src/memory.c
+						./src/memory.c \
 
 	INCLUDES = -I ./include/common
 endif
