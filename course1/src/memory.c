@@ -48,3 +48,27 @@ void clear_all(char * ptr, unsigned int size){
   set_all(ptr, 0, size);
 }
 
+uint8_t *my_memmove(uint8_t *src, uint8_t *dst, size_t length) {
+  
+  // Check if destination pointer is less than source
+  if (dst < src) {
+    for (size_t i = 0; i < length; i++) {
+      *(dst + i) = *(src + i);          // Apply copy-forward
+    }
+  } else if (dst >= src) {
+    for (size_t i = (length - 1); i >= 0; i--) {
+      *(dst + i) = *(src + i);          // Apply copy-backward
+    }
+  }
+
+  return dst;
+}
+
+uint8_t my_memcopy(uint8_t *src, uint8_t *dst, size_t length) {
+  for (size_t i = 0; i < length; i++) {
+    *(dst + i) = *(src + i);
+  }
+
+  return dst;
+}
+
