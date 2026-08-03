@@ -50,14 +50,14 @@ uint8_t my_itoa(int32_t data, uint8_t *ptr, uint32_t base) {
         *(ptr + count) = (uint8_t) ('A' + (rem - 10));
       }
       data_cpy /= base;
-      count++;                           // Here count becomes length of the string
+      count++;                           // Here count becomes length of the number
     }
   }
 
   // Adding a negative sign if the number is negative
   if (is_negative) {
     *(ptr + count) = '-';
-    count++;
+    count++;                            // Adding 1 to the length
   }
 
   // Reversing the digits
@@ -69,7 +69,7 @@ uint8_t my_itoa(int32_t data, uint8_t *ptr, uint32_t base) {
 
   *(ptr + count) = '\0';                  // Add the null character at the end
 
-  return (count + 1);                     // Return length of the string
+  return (count + 1);                     // Return length
 }
 
 
