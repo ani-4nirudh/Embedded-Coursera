@@ -28,7 +28,7 @@
  * @param ptr Data converted to string pointer
  * @param base Bases to support 2 to 16
  *
- * @return Pointer to the string
+ * @return length of the converted data
  * */
 uint8_t my_itoa(int32_t data, uint8_t *ptr, uint32_t base);
 
@@ -40,7 +40,7 @@ uint8_t my_itoa(int32_t data, uint8_t *ptr, uint32_t base);
  * @param ptr Pointer variable to the string
  * @param base Bases to support 2 to 16
  *
- * @return Signed integer
+ * @return Converted signed integer
  * */
 int32_t my_atoi(uint8_t *ptr, uint8_t digits, uint32_t base);
 
