@@ -38,7 +38,7 @@ PLATFORM ?= HOST
 include sources.mk
 
 # Name of the final target
-TARGET = c1m2
+TARGET = c1
 
 # Conditional check to define CFLAGS
 ifeq ($(PLATFORM), MSP432)
