@@ -41,8 +41,8 @@ uint8_t my_itoa(int32_t data, uint8_t *ptr, uint32_t base) {
     *(ptr + count) = '0';
     count++;
   } else if (data_cpy != 0) {
-    uint8_t rem;                          // Variable to save the digits
-    while (data_cpy != 0) {               // Saving digits in a reverse order
+    uint8_t rem;                                          // Variable to save the digits
+    while (data_cpy != 0) {                               // Saving digits in a reverse order
       rem = data_cpy % base;
       if (rem < 10) {
         *(ptr + count) = (uint8_t) ('0' + rem);
@@ -50,14 +50,14 @@ uint8_t my_itoa(int32_t data, uint8_t *ptr, uint32_t base) {
         *(ptr + count) = (uint8_t) ('A' + (rem - 10));
       }
       data_cpy /= base;
-      count++;                           // Here count becomes length of the number
+      count++;                                            // Here count becomes length of the number
     }
   }
 
   // Adding a negative sign if the number is negative
   if (is_negative) {
     *(ptr + count) = '-';
-    count++;                            // Adding 1 to the length
+    count++;                                              // Adding 1 to the length
   }
 
   // Reversing the digits
@@ -67,14 +67,14 @@ uint8_t my_itoa(int32_t data, uint8_t *ptr, uint32_t base) {
     *(ptr + i) = temp;
   }
 
-  *(ptr + count) = '\0';                  // Add the null character at the end
+  *(ptr + count) = '\0';                                  // Add the null character at the end
 
-  return (count + 1);                     // Return length
+  return (count + 1);                                     // Return length
 }
 
 int32_t my_atoi(uint8_t *ptr, uint8_t digits, uint32_t base) {
   bool is_negative = false;
-  uint8_t ptr_pos = 0;                    // Saving the pointer position
+  uint8_t ptr_pos = 0;                                    // Saving the pointer position
 
   if ((base < 2) || (base > 16)) {
     return 0;
