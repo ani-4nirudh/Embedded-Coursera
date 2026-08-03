@@ -72,4 +72,39 @@ uint8_t my_itoa(int32_t data, uint8_t *ptr, uint32_t base) {
   return (count + 1);                     // Return length
 }
 
+int32_t my_atoi(uint8_t *ptr, uint8_t digits, uint32_t base) {
+  bool is_negative = false;
+  uint8_t ptr_pos = 0;                    // Saving the pointer position
 
+  if ((base < 2) || (base > 16)) {
+    return 0;
+  }
+
+  // Check if there is a negative sign
+  if (*ptr == '-') {
+    is_negative = true;
+    ptr_pos++;
+  }
+
+  int32_t value = 0;                                      // Integer to store the final value
+  while ( *(ptr + ptr_pos) != '\0' ) {
+    uint8_t ascii_num = *(ptr + ptr_pos);                 // Checking singular digits
+    int32_t num;                                          // Convert singular digits to integer
+    if ( (ascii_num >= '0') && (ascii_num <= '9') ) {
+      num = (int32_t) (ascii_num - '0');
+    } else if ( (ascii_num >= 'A') && (ascii_num <= 'F') ) {
+      num = (int32_t) (ascii_num - 'A' + 10);
+    } else if ( (ascii_num >= 'a') && (ascii_num <= 'f') ) {
+      num = (int32_t) (ascii_num - 'a' + 10);
+    }
+
+    value = (value * base) + num;                         // Save the decimal number
+    ptr_pos++;                                            // Move the pointer forward
+  }
+
+  if (is_negative) {
+    value *= -1;                                          // Convert the number to negative value
+  }
+
+  return value;
+}
