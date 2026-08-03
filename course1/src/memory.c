@@ -22,8 +22,6 @@
  */
 
 #include <stdlib.h>
-#include <stdint.h>
-#include <stddef.h>
 #include "memory.h"
 
 /***********************************************************
@@ -115,6 +113,6 @@ int32_t * reserve_words(size_t length) {
   return ptr;
 }
 
-void free_words(int32_t *src) {
+void free_words(uint32_t *src) {
   free(src);
 }

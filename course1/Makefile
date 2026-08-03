@@ -44,7 +44,7 @@ ifeq ($(PLATFORM), MSP432)
 							 -mfloat-abi=hard \
 							 -mfpu=fpv4-sp-d16 \
 							 --specs=nosys.specs
-	CPPFLAGS = -DMSP432
+	CPPFLAGS = -DMSP432 -DCOURSE1
 	LDFLAGS = $(LINKER_FILE) -Wl,-Map=$(TARGET).map
 endif
 
@@ -52,7 +52,7 @@ ifeq ($(PLATFORM), HOST)
 	CC = gcc
 	CPU =
 	ARCH_FLAGS =
-	CPPFLAGS = -DHOST
+	CPPFLAGS = -DHOST -DCOURSE1
 	LDFLAGS = -Wl,-Map=$(TARGET).map
 endif
 

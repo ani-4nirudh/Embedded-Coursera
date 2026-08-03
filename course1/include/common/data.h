@@ -21,6 +21,11 @@
 #ifndef __DATA_H__
 #define __DATA_H__
 
+#define BASE_10 10
+#define BASE_16 16
+
+#include "platform.h"
+
 /**
  * @brief Integer to ASCII string conversion
  *

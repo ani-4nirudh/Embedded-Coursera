@@ -4,3 +4,9 @@ course1/src/*.asm
 course1/src/*.o
 course1/src/*.d
 course1/src/*.i
+course1/*.out
+course1/*.map
+course1/*.asm
+course1/*.o
+course1/*.d
+course1/*.i

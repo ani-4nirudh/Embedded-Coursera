@@ -18,6 +18,8 @@
 #ifndef __STATS_H__
 #define __STATS_H__
 
+#include "platform.h"
+
 /**
  * @brief Print the statistics of a given array
  * @param array The array of unsigned characters
