@@ -17,8 +17,14 @@
 # Build Targets (Default - HOST):
 # 
 # 		make compile-all
-# 		make build
-# 		make clean
+# 		
+# 		make build PLATFORM=HOST
+# 		make build VERBOSE=1 PLATFORM=HOST
+# 		make clean PLATFORM=HOST
+#
+# 		make build PLATFORM=MSP432
+# 		make build VERBOSE=1 PLATFORM=432
+# 		make clean PLATFORM=MSP432
 #
 # Platform Overrides:
 #
