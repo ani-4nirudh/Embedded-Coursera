@@ -3,6 +3,8 @@ This repo contains code for the assignments in the online [embedded systems cour
 
 # Build Instructions
 ```
+cd course1
+
 # For verbose test outputs
 make build VERBOSE=1 PLATFORM=HOST
 
